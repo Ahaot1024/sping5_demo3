@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="emp" class="com.hyh.spring_demo4.Emp">
+        <property name="e_name" value="hyh"></property>
+        <property name="gender" value="男"></property>
+<!--        <property name="dept">-->
+<!--            &lt;!&ndash;内部bean写法（外部bean写法也可以）&ndash;&gt;-->
+<!--            <bean id="dept" class="com.hyh.spring_demo4.Dept">-->
+<!--                <property name="d_name" value="技术部"></property>-->
+<!--            </bean>-->
+<!--        </property>-->
+        <!--name="dept.d_name"这种写法前提必须要给Emp类的dept属性设置get方法-->
+        <property name="dept" ref="dept"></property>
+        <property name="dept.d_name" value="技术部"></property>
+    </bean>
+    <bean id="dept" class="com.hyh.spring_demo4.Dept"></bean>
+
+</beans>

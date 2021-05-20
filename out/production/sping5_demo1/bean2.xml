@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    配置User对象的创建,通过set方法给属性注入值-->
+    <!--    <bean id="user" class="com.hyh.spring_demo2.User">-->
+    <!--        <property name="userName" value="hyh"></property>-->
+    <!--        <property name="userNo" value="10" ></property>-->
+    <!--    </bean>-->
+
+    <!--    通过名称空间注入属性-->
+    <!--    <bean id="user" class="com.hyh.spring_demo2.User"-->
+    <!--          p:userName="hyh" p:userNo="1"></bean>-->
+
+    <!--    注入空值-->
+    <!--        <bean id="user" class="com.hyh.spring_demo2.User">-->
+    <!--            <property name="userName" value="hyh"></property>-->
+    <!--            <property name="userNo"  >-->
+    <!--                <null></null>-->
+    <!--            </property>-->
+    <!--        </bean>-->
+
+    <!--    注入特殊符号<>,1、转义字符2、CDATA格式-->
+    <bean id="book" class="com.hyh.spring_demo2.Book">
+        <property name="bookName" value="&lt;hyh&gt;"></property>
+        <property name="author">
+            <value><![CDATA[<10>]]></value>
+        </property>
+    </bean>
+
+    <!--    bean标签配置对象创建，constructor-arg标签配置有参构造器注入值-->
+    <!--    <bean id="book" class="com.hyh.spring_demo2.Book">-->
+    <!--        <constructor-arg name="bookName" value="hyh"></constructor-arg>-->
+    <!--        <constructor-arg name="author" value="hyh"></constructor-arg>-->
+    <!--    </bean>-->
+</beans>
